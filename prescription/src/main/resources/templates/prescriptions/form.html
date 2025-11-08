@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Prescription Management System</h1>
+        <nav>
+            <a th:href="@{/prescriptions}">Prescriptions</a>
+            <a th:href="@{/prescriptions/report}">Report</a>
+            <a th:href="@{/logout}">Logout</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="form-container">
+            <h2 th:text="${prescription.id != null ? 'Edit Prescription' : 'New Prescription'}"></h2>
+
+            <form th:action="@{/prescriptions/save}" th:object="${prescription}"
+                  method="post" id="prescriptionForm">
+
+                <input type="hidden" th:field="*{id}">
+
+                <div class="form-group">
+                    <label for="prescriptionDate">Prescription Date *</label>
+                    <input type="date" id="prescriptionDate" th:field="*{prescriptionDate}"
+                           required class="form-control">
+                    <span class="error" th:if="${#fields.hasErrors('prescriptionDate')}"
+                          th:errors="*{prescriptionDate}"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientName">Patient Name *</label>
+                    <input type="text" id="patientName" th:field="*{patientName}"
+                           required class="form-control">
+                    <span class="error" th:if="${#fields.hasErrors('patientName')}"
+                          th:errors="*{patientName}"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="patientAge">Patient Age *</label>
+                        <input type="number" id="patientAge" th:field="*{patientAge}"
+                               required min="0" max="150" class="form-control">
+                        <span class="error" th:if="${#fields.hasErrors('patientAge')}"
+                              th:errors="*{patientAge}"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientGender">Gender *</label>
+                        <select id="patientGender" th:field="*{patientGender}"
+                                required class="form-control">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error" th:if="${#fields.hasErrors('patientGender')}"
+                              th:errors="*{patientGender}"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="diagnosis">Diagnosis</label>
+                    <textarea id="diagnosis" th:field="*{diagnosis}"
+                              rows="4" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="medicines">Medicines</label>
+                    <textarea id="medicines" th:field="*{medicines}"
+                              rows="4" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="nextVisitDate">Next Visit Date</label>
+                    <input type="date" id="nextVisitDate" th:field="*{nextVisitDate}"
+                           class="form-control">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Prescription</button>
+                    <a th:href="@{/prescriptions}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

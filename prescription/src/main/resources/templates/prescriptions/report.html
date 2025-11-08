@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Report</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Prescription Management System</h1>
+        <nav>
+            <a th:href="@{/prescriptions}">Prescriptions</a>
+            <a th:href="@{/prescriptions/report}">Report</a>
+            <a th:href="@{/logout}">Logout</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Day-wise Prescription Count Report</h2>
+
+        <!-- Summary Cards -->
+        <div class="report-summary">
+            <div class="summary-card">
+                <h3>Total Prescriptions</h3>
+                <p class="summary-number" th:text="${report.size() > 0 ? report.stream().map(r -> r.get('count')).mapToInt(c -> ((Number)c).intValue()).sum() : 0}">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Days with Prescriptions</h3>
+                <p class="summary-number" th:text="${report.size()}">0</p>
+            </div>
+        </div>
+
+        <!-- Report Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Prescription Count</th>
+                    <th>Day of Week</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${report.empty}">
+                    <td colspan="3" class="text-center">No prescription data available.</td>
+                </tr>
+                <tr th:each="item : ${report}">
+                    <td th:text="${#temporals.format(item.date, 'yyyy-MM-dd')}">2025-11-06</td>
+                    <td><strong th:text="${item.count}">0</strong></td>
+                    <td th:text="${#temporals.format(item.date, 'EEEE')}">Wednesday</td>
+                </tr>
+                </tbody>
+                <tfoot th:if="${!report.empty}">
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong th:text="${report.stream().map(r -> r.get('count')).mapToInt(c -> ((Number)c).intValue()).sum()}">0</strong></td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- External API Section -->
+        <div class="external-api-section">
+            <h3>External Drug Interaction Information (RxNav API)</h3>
+            <p class="api-description">
+                Click the button below to fetch drug interaction data from the RxNav API.
+                This demonstrates consuming an external REST API and displaying the results.
+            </p>
+            <button id="loadDrugInfo" class="btn btn-primary">Load Drug Interactions</button>
+            <div id="drugInfoContainer" class="api-result-container"></div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
