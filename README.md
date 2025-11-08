@@ -29,10 +29,5 @@ A web-based prescription management system built with Spring Boot.
 ./mvnw spring-boot:run
 ```
 
-Access at: http://localhost:8080
-
-## API Documentation
-Swagger UI: http://localhost:8080/swagger-ui.html
-
 ## Author
 Md Robiul Islam
