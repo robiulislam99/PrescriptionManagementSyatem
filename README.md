@@ -35,35 +35,32 @@ Access at: http://localhost:8080
 Swagger UI: http://localhost:8080/swagger-ui.html
 
 ## Screenshots
-📸 Screenshot: Login Page
-Location: screenshots/login.png
+### 📸 Login Page
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/login%20page.png)
 Description: Secure authentication with username and password
 
-📸 Screenshot: Prescription List
-Location: screenshots/prescription-list.png
+### 📸 Prescription List
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/prescription%20list%20with%20filter.png)
 Description: View all prescriptions with date range filtering capabilities
 
-📸 Screenshot: Create Prescription
-Location: screenshots/create-prescription.png
+### 📸 Create Prescription
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/create%20prescription%20form.png)
 Description: User-friendly form to add new prescriptions
 
-📸 Screenshot: Edit Prescription
-Location: screenshots/edit-prescription.png
+### 📸 Edit Prescription
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/edit%20prescription.png)
 Description: Modify existing prescription details
 
-📸 Screenshot: Day-wise Report
-Location: screenshots/daywise-report.png
+### 📸 Day-wise Report
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/day%20wise%20prescription%20count.png)
 Description: Analytics showing prescription counts grouped by day
 
-📸 Screenshot: REST API Response
-Location: screenshots/api-response.png
+### 📸 REST API Response
+(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/REST%20API%20response.png)
 Description: JSON response from REST API endpoints (Browser/Postman)
 Example endpoint: GET /api/prescriptions
 Response format: JSON
 
-📸 Screenshot: Drug Interactions
-Location: screenshots/drug-interactions.png
-Description: Integration with external drug interaction API
 
 ## Author
 Md Robiul Islam
