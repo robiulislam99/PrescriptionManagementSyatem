@@ -36,7 +36,7 @@ Swagger UI: http://localhost:8080/swagger-ui.html
 
 ## Screenshots
 ### 📸 Login Page
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/login%20page.png)
+![login](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/login%20page.png)
 Description: Secure authentication with username and password
 
 ### 📸 Prescription List
