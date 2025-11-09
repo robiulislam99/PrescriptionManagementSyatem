@@ -29,5 +29,41 @@ A web-based prescription management system built with Spring Boot.
 ./mvnw spring-boot:run
 ```
 
+Access at: http://localhost:8080
+
+## API Documentation
+Swagger UI: http://localhost:8080/swagger-ui.html
+
+## Screenshots
+📸 Screenshot: Login Page
+Location: screenshots/login.png
+Description: Secure authentication with username and password
+
+📸 Screenshot: Prescription List
+Location: screenshots/prescription-list.png
+Description: View all prescriptions with date range filtering capabilities
+
+📸 Screenshot: Create Prescription
+Location: screenshots/create-prescription.png
+Description: User-friendly form to add new prescriptions
+
+📸 Screenshot: Edit Prescription
+Location: screenshots/edit-prescription.png
+Description: Modify existing prescription details
+
+📸 Screenshot: Day-wise Report
+Location: screenshots/daywise-report.png
+Description: Analytics showing prescription counts grouped by day
+
+📸 Screenshot: REST API Response
+Location: screenshots/api-response.png
+Description: JSON response from REST API endpoints (Browser/Postman)
+Example endpoint: GET /api/prescriptions
+Response format: JSON
+
+📸 Screenshot: Drug Interactions
+Location: screenshots/drug-interactions.png
+Description: Integration with external drug interaction API
+
 ## Author
 Md Robiul Islam
