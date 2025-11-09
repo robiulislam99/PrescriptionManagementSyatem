@@ -40,23 +40,23 @@ Swagger UI: http://localhost:8080/swagger-ui.html
 Description: Secure authentication with username and password
 
 ### 📸 Prescription List
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/prescription%20list%20with%20filter.png)
+![list](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/prescription%20list%20with%20filter.png)
 Description: View all prescriptions with date range filtering capabilities
 
 ### 📸 Create Prescription
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/create%20prescription%20form.png)
+![create](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/create%20prescription%20form.png)
 Description: User-friendly form to add new prescriptions
 
 ### 📸 Edit Prescription
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/edit%20prescription.png)
+![edit](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/edit%20prescription.png)
 Description: Modify existing prescription details
 
 ### 📸 Day-wise Report
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/day%20wise%20prescription%20count.png)
+![day](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/day%20wise%20prescription%20count.png)
 Description: Analytics showing prescription counts grouped by day
 
 ### 📸 REST API Response
-(https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/REST%20API%20response.png)
+![api](https://github.com/robiulislam99/PrescriptionManagementSyatem/blob/main/screenshots/REST%20API%20response.png)
 Description: JSON response from REST API endpoints (Browser/Postman)
 Example endpoint: GET /api/prescriptions
 Response format: JSON
