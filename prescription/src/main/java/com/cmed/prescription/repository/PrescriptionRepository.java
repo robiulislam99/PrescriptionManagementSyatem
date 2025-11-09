@@ -18,5 +18,6 @@ public interface PrescriptionRepository extends JpaRepository<Prescription, Long
             "FROM Prescription p " +
             "GROUP BY p.prescriptionDate " +
             "ORDER BY p.prescriptionDate")
-    List<Map<String, Object>> getDayWisePrescriptionCount();
+    List<Object[]> getDayWisePrescriptionCount();
+   // List<Map<String, Object>> getDayWisePrescriptionCount();
 }

@@ -84,8 +84,23 @@ public class PrescriptionController {
 
     @GetMapping("/report")
     public String showReport(Model model) {
-        List<Map<String, Object>> report = prescriptionService.getDayWisePrescriptionCount();
-        model.addAttribute("report", report);
-        return "prescriptions/report";
+        try {
+            List<Map<String, Object>> report = prescriptionService.getDayWisePrescriptionCount();
+            model.addAttribute("report", report);
+            System.out.println("📊 Report data loaded: " + report.size() + " entries");
+
+            // Debug: Print first entry if available
+            if (!report.isEmpty()) {
+                System.out.println("   First entry: " + report.get(0));
+            }
+
+            return "prescriptions/report";
+        } catch (Exception e) {
+            System.err.println("❌ Error loading report: " + e.getMessage());
+            e.printStackTrace();
+            model.addAttribute("report", List.of()); // Empty list to prevent null errors
+            model.addAttribute("error", "Error generating report: " + e.getMessage());
+            return "prescriptions/report";
+        }
     }
 }

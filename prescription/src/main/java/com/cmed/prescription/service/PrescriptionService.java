@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -37,6 +39,19 @@ public class PrescriptionService {
     }
 
     public List<Map<String, Object>> getDayWisePrescriptionCount() {
-        return prescriptionRepository.getDayWisePrescriptionCount();
+        // Get raw results from repository
+        List<Object[]> results = prescriptionRepository.getDayWisePrescriptionCount();
+
+        // Convert to List of Maps for Thymeleaf template
+        List<Map<String, Object>> reportData = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("date", result[0]);   // LocalDate
+            map.put("count", result[1]);  // Long
+            reportData.add(map);
+        }
+
+        return reportData;
     }
 }
